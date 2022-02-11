@@ -9,12 +9,14 @@ import { ProductService } from './product.service';
   providedIn: 'root'
 })
 export class ProductsResolverService implements Resolve<any> {
-  constructor(private product: ProductService) {}
+  constructor(private product: ProductService) { }
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    alert('If anything went wrong!!! then navigate the user to exception page...');
+    alert('Resolver called!!!');
     return this.product.getProducts().pipe(
       catchError(error => {
-        return of('No data');
+        return of(
+          alert('If anything went wrong, then navigate the user to exception page...')
+        );
       })
     );
   }

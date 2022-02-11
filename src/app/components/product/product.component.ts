@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     alert(
-      'Activated route data in Component:::',
+      'Fetch the information from Resolver using the activated route',
     );
     this.activatedRoute.data.subscribe((response: any) => {
       this.products = response.products;

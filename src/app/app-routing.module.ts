@@ -7,6 +7,9 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductsResolverService } from './services/products-resolver.service';
 
 const routes: Routes = [
+  {
+    path: '',   redirectTo: '/home', pathMatch: 'full'
+  },
   { path: 'home', component: HomeComponent },
   {
     path: 'products',
