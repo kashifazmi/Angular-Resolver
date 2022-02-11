@@ -13,14 +13,11 @@ export class ProductComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(
+    alert(
       'Activated route data in Component:::',
-      this.activatedRoute.data
     );
     this.activatedRoute.data.subscribe((response: any) => {
-      console.log('PRODUCT FETCHING', response);
       this.products = response.products;
-      console.log('PRODUCT FETCHED');
     });
   }
 
