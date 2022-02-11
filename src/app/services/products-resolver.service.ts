@@ -11,7 +11,7 @@ import { ProductService } from './product.service';
 export class ProductsResolverService implements Resolve<any> {
   constructor(private product: ProductService) {}
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    alert('Called Get Product in resolver...');
+    alert('If anything went wrong!!! then navigate the user to exception page...');
     return this.product.getProducts().pipe(
       catchError(error => {
         return of('No data');
